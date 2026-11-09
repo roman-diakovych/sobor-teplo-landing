@@ -70,6 +70,17 @@ section{padding:88px 0}
 .quote{background:var(--navy);color:#fff;border-radius:var(--r);padding:34px;position:sticky;top:100px}
 .quote p{font-family:Lora,serif;font-size:24px;line-height:1.35;color:var(--gold-l)}
 .quote small{display:block;margin-top:16px;color:#a9b6c4;font-size:14px}
+.quote{padding:0;overflow:hidden}
+.quote>p,.quote>small,.quote>a{margin-left:30px;margin-right:30px}
+.quote>p{margin-top:24px}
+.quote>a{width:calc(100% - 60px)!important;margin-bottom:30px}
+.pastor{margin:0;position:relative}
+.pastor img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 12%}
+.pastor figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 24px 18px;background:linear-gradient(180deg,rgba(21,33,46,0),rgba(21,33,46,.92) 55%)}
+.pastor b{display:block;font-family:Lora,serif;font-size:21px;color:#fff;font-weight:600}
+.pastor span{display:block;font-size:13px;color:var(--gold-l);line-height:1.4;margin-top:2px}
+.letter .txt p.sign{font-size:16px;color:var(--mute);margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.letter .txt p.sign b{font-family:Lora,serif;font-size:19px;color:var(--navy)}
 .amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .amt{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px}
 .amt .v{font-family:Lora,serif;font-size:34px;font-weight:700;color:var(--navy)}
@@ -122,7 +133,7 @@ footer a{color:#c7d0da;text-decoration:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 @media (max-width:900px){
   .letter,.far{grid-template-columns:1fr}
-  .quote{position:static}
+  .quote{position:static;order:-1;max-width:520px}
   .amounts{grid-template-columns:1fr 1fr}
   .far .img{min-height:300px}
   .far .c{padding:36px 26px}
@@ -202,14 +213,19 @@ footer a{color:#c7d0da;text-decoration:none}
 <section id="letter">
   <div class="wrap letter">
     <div class="txt">
-      <div class="kick" data-i18n="lk">Звернення</div>
+      <div class="kick" data-i18n="lk">Звернення адміністратора собору</div>
       <p class="first" data-i18n="l0">Дорогі парафіяни, друзі та добродії Патріаршого собору Воскресіння Христового!</p>
       <p data-i18n="l1">Попереду непроста зима. В умовах війни, енергетичної кризи та постійних викликів ми особливо гостро усвідомлюємо, наскільки важливо сьогодні зберегти тепло. Тепло не лише в наших домівках, а й у Божому домі, де щодня лунає молитва за Україну, за наших захисників, за мир і за кожного з нас.</p>
       <p data-i18n="l2">Сьогодні звертаємося до вас із проханням допомогти нам забезпечити опалення Патріаршого собору впродовж двох найближчих місяців. <b>На листопад і грудень нам необхідно зібрати 330 000 гривень.</b></p>
       <p data-i18n="l3">Це велика сума для нашої парафіяльної спільноти. Але ми віримо, що спільними зусиллями зможемо впоратися і з цим викликом!</p>
       <p data-i18n="l4">Ми прагнемо, щоб Патріарший собор і надалі залишався місцем щоденної молитви, духовної підтримки, зустрічей та служіння людям. Щоб навіть у найхолодніші зимові дні кожен, хто переступає його поріг, відчував не лише тепло людських сердець, а й тепло нашого спільного дому.</p>
+      <p class="sign" data-i18n="sign"><b>о. Андрій Боднарук</b><br>адміністратор Патріаршого собору Воскресіння Христового УГКЦ</p>
     </div>
     <aside class="quote">
+      <figure class="pastor">
+        <img src="img/admin.webp" alt="о. Андрій Боднарук, адміністратор Патріаршого собору" width="640" height="799" loading="lazy">
+        <figcaption><b data-i18n="admName">о. Андрій Боднарук</b><span data-i18n="admRole">Адміністратор Патріаршого собору Воскресіння Христового УГКЦ</span></figcaption>
+      </figure>
       <p data-i18n="q">«Не існує малої пожертви, коли вона зроблена від щирого серця».</p>
       <small data-i18n="qs">Кожна пожертва — 100, 200, 500 чи 1000 гривень — це реальна допомога.</small>
       <a class="btn btn-gold" style="margin-top:24px;width:100%" href="#help" data-i18n="toDetails">Перейти до реквізитів</a>
@@ -352,7 +368,9 @@ var EN = {
   s1b:'≈ UAH 5,400', s1:'covers one day of heating in the Cathedral',
   s2b:'Every day', s2:'prayers rise here for Ukraine, its defenders and for peace',
   s3:'you can help from any country',
-  lk:'Our appeal',
+  lk:'An appeal from the Cathedral administrator',
+  admName:'Fr. Andriy Bodnaruk', admRole:'Administrator of the Patriarchal Cathedral of the Resurrection of Christ, UGCC',
+  sign:'<b>Fr. Andriy Bodnaruk</b><br>Administrator of the Patriarchal Cathedral of the Resurrection of Christ, UGCC',
   l0:'Dear parishioners, friends and benefactors of the Patriarchal Cathedral of the Resurrection of Christ!',
   l1:'A difficult winter lies ahead. Amid war, an energy crisis and constant challenges, we feel especially keenly how important it is to keep the warmth today. Warmth not only in our homes, but also in the House of God, where every day prayers are offered for Ukraine, for our defenders, for peace and for each of us.',
   l2:'Today we turn to you with a request to help us heat the Patriarchal Cathedral over the next two months. <b>For November and December we need to raise UAH 330,000.</b>',
