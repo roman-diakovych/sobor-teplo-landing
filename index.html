@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Допоможімо зберегти тепло — збір на опалення Патріаршого собору</title>
-<meta name="description" content="Збір 330 000 грн на опалення Патріаршого собору Воскресіння Христового УГКЦ на листопад і грудень 2026 року. Реквізити UAH, USD, EUR та PayPal.">
-<meta property="og:title" content="Допоможімо зберегти тепло в Патріаршому соборі">
+<meta name="description" content="Збір 330 000 грн на опалення Патріаршого собору Воскресіння Христового УГКЦ на листопад і грудень 2026 року. Реквізити UAH, USD, EUR та PayPal. Heating fundraiser for the Patriarchal Cathedral of the UGCC in Kyiv.">
+<meta property="og:title" content="Допоможімо зберегти тепло в Патріаршому соборі · Help keep the Cathedral warm">
 <meta property="og:description" content="На листопад і грудень потрібно зібрати 330 000 грн. Кожна пожертва зігріває наш спільний дім.">
+<meta property="og:type" content="website">
 <meta property="og:image" content="img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15212e">
+<link rel="preload" as="image" href="img/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -26,20 +31,16 @@ a{color:inherit}
 .btn-gold:hover{background:#d2ab58}
 .btn-ghost{border:1.5px solid rgba(231,211,162,.7);color:var(--gold-l);background:transparent}
 .btn-sm{padding:9px 16px;font-size:14px}
-
-/* header */
 header{position:sticky;top:0;z-index:50;background:rgba(21,33,46,.96);backdrop-filter:blur(6px);color:#fff}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none;min-width:0}
 .brand .logo{flex:0 0 auto;height:56px;width:auto;display:block}
-.brand .sep{display:block;width:1.5px;height:38px;background:linear-gradient(#c39a43,#8a6a2a)}
-.brand span{font-family:Lora,serif;font-size:15px;line-height:1.25;color:#f2ede2}
-.brand small{display:block;font-family:Inter,sans-serif;font-size:12px;color:#9fb0c2}
 .hnav{display:flex;align-items:center;gap:22px;font-size:14px}
 .hnav a.l{color:#c7d0da;text-decoration:none}
 .hnav a.l:hover{color:#fff}
-
-/* hero */
+.lang{display:inline-flex;border:1.5px solid rgba(231,211,162,.45);border-radius:30px;overflow:hidden}
+.lang button{background:transparent;border:0;color:#a9b6c4;font:600 12px Inter,sans-serif;letter-spacing:.06em;padding:6px 10px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--gold-l);color:var(--navy)}
 .hero{position:relative;color:#fff;background:var(--navy);overflow:hidden}
 .hero .bg{position:absolute;inset:0;background:var(--hero) 70% center/cover}
 .hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,33,46,.94) 0%,rgba(21,33,46,.8) 38%,rgba(21,33,46,.25) 70%,rgba(21,33,46,.05) 100%)}
@@ -55,36 +56,27 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .prog .fill{height:100%;background:linear-gradient(90deg,#b88a33,#e7c477);border-radius:10px;width:0;transition:width 1.2s ease}
 .prog .meta{display:flex;justify-content:space-between;font-size:14px;color:#c7d0da;margin-top:8px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-
-/* stats strip */
 .strip{background:var(--navy2);color:#fff}
 .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:26px 24px}
 .strip b{display:block;font-family:Lora,serif;font-size:28px;color:var(--gold-l);font-weight:600}
 .strip span{font-size:14px;color:#a9b6c4}
-
 section{padding:88px 0}
 .sec-h{max-width:760px;margin-bottom:40px}
 .sec-h h2{font-size:clamp(30px,4vw,42px);color:var(--navy)}
 .sec-h p{color:var(--mute);margin-top:12px;font-size:18px}
-
-/* letter */
 .letter{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
 .letter .txt p{margin-bottom:16px;font-size:18px}
 .letter .txt p.first{font-family:Lora,serif;font-size:22px;color:var(--navy)}
 .quote{background:var(--navy);color:#fff;border-radius:var(--r);padding:34px;position:sticky;top:100px}
 .quote p{font-family:Lora,serif;font-size:24px;line-height:1.35;color:var(--gold-l)}
 .quote small{display:block;margin-top:16px;color:#a9b6c4;font-size:14px}
-
-/* amounts */
 .amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.amt{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;text-align:left}
+.amt{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px}
 .amt .v{font-family:Lora,serif;font-size:34px;font-weight:700;color:var(--navy)}
 .amt .v small{font-size:18px;font-weight:500;color:var(--mute)}
 .amt .t{margin-top:6px;color:var(--gold);font-weight:600;font-size:15px}
 .amt p{font-size:14px;color:var(--mute);margin-top:4px}
 .note{font-size:13px;color:var(--mute);margin-top:16px}
-
-/* requisites */
 #help{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .tab{padding:11px 20px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font:600 15px Inter,sans-serif;color:var(--navy);cursor:pointer}
@@ -106,47 +98,40 @@ section{padding:88px 0}
 .inter code{font-family:ui-monospace,Menlo,monospace;background:#fff;padding:1px 6px;border-radius:4px;border:1px solid var(--line)}
 .panel-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
 .panel-foot p{font-size:14px;color:var(--mute)}
-
-/* far */
-.far{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:18px;overflow:hidden;background:var(--navy);color:#fff}
+.far{display:grid;grid-template-columns:1fr 1fr;border-radius:18px;overflow:hidden;background:var(--navy);color:#fff}
 .far .img{background:var(--far) center 30%/cover;min-height:420px}
 .far .c{padding:52px 48px}
 .far h2{font-size:36px;color:#fff;margin-bottom:16px}
 .far p{color:#c7d0da;margin-bottom:14px}
 .flags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .flags span{border:1px solid #34485e;border-radius:30px;padding:6px 14px;font-size:14px;color:var(--gold-l)}
-
-/* share */
-.share{text-align:center;max-width:720px;margin:0 auto}
+.share{text-align:center;max-width:720px;margin:0 auto;padding:0 24px}
 .share h2{font-size:clamp(28px,4vw,38px);color:var(--navy)}
 .share p{color:var(--mute);margin:12px 0 28px;font-size:18px}
 .sbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .sbtn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;background:#fff;border:1.5px solid var(--line);font:600 15px Inter,sans-serif;color:var(--navy);text-decoration:none;cursor:pointer}
 .sbtn:hover{border-color:var(--gold)}
-
-/* final */
 .final{background:var(--navy);color:#fff;text-align:center;padding:84px 0}
 .final h2{font-size:clamp(32px,5vw,52px);color:var(--gold-l)}
-.final p{font-family:Lora,serif;font-style:italic;font-size:20px;color:#c7d0da;margin:16px 0 30px}
+.final p{font-family:Lora,serif;font-style:italic;font-size:20px;color:#c7d0da;margin:16px auto 30px;max-width:820px}
 footer{background:#0f1923;color:#8d9aaa;font-size:14px;padding:36px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer a{color:#c7d0da;text-decoration:none}
-
 .mbar{display:none}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--navy);color:var(--gold-l);padding:12px 20px;border-radius:10px;font-size:15px;font-weight:600;transition:transform .25s;z-index:100;box-shadow:0 8px 30px rgba(0,0,0,.25)}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
 @media (max-width:900px){
   .letter,.far{grid-template-columns:1fr}
   .quote{position:static}
   .amounts{grid-template-columns:1fr 1fr}
-  .far .img{min-height:220px}
+  .far .img{min-height:300px}
   .far .c{padding:36px 26px}
   .hnav a.l{display:none}
 }
 @media (max-width:640px){
-  body{font-size:16px}
+  body{font-size:16px;padding-bottom:76px}
   section{padding:64px 0}
+  header .wrap{padding:0 16px}
   .hero .wrap{padding:64px 20px 60px}
   .hero .bg:after{background:linear-gradient(180deg,rgba(21,33,46,.75),rgba(21,33,46,.95))}
   .goal .sum{font-size:38px}
@@ -154,28 +139,32 @@ footer a{color:#c7d0da;text-decoration:none}
   .row{grid-template-columns:1fr auto;gap:4px 12px}
   .row .k{grid-column:1/-1}
   .panel{padding:4px 18px 20px}
-  .brand .logo{height:46px}
-  .hnav .hbtn{padding:8px 13px;font-size:13px;gap:6px;border-radius:30px}
-  .brand .logo{height:42px}
+  .brand .logo{height:40px}
+  .hnav{gap:8px}
+  .hnav .hbtn{padding:8px 12px;font-size:13px;border-radius:30px}
+  .lang button{padding:6px 8px;font-size:11px}
   .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(21,33,46,.97);gap:10px}
   .mbar .btn{flex:1;padding:13px}
-  body{padding-bottom:76px}
   .toast{bottom:90px}
+}
+@media (max-width:370px){
+  .brand .logo{height:34px}
+  .hnav .hbtn{padding:7px 10px;font-size:12px}
 }
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
-    <a class="brand" href="https://sb.dev.cawas.com/" aria-label="Патріарший собор — головна">
-      <img class="logo" src="data:image/png;base64,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" alt="Патріарший собор Воскресіння Христового УГКЦ" width="177" height="48">
+    <a class="brand" href="https://sb.dev.cawas.com/" aria-label="Патріарший собор Воскресіння Христового УГКЦ">
+      <img class="logo" src="img/logo.png" alt="Патріарший собор Воскресіння Христового УГКЦ" width="207" height="56">
     </a>
     <nav class="hnav">
-      <a class="l" href="#letter">Звернення</a>
-      <a class="l" href="#help">Реквізити</a>
-      <a class="l" href="#far">З-за кордону</a>
-      <a class="btn btn-gold btn-sm hbtn" href="#help">Підтримати</a>
+      <a class="l" href="#letter" data-i18n="nav1">Звернення</a>
+      <a class="l" href="#help" data-i18n="nav2">Реквізити</a>
+      <a class="l" href="#far" data-i18n="nav3">З-за кордону</a>
+      <div class="lang" role="group" aria-label="Мова / Language"><button type="button" data-lang="uk" aria-pressed="true">UA</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      <a class="btn btn-gold btn-sm hbtn" href="#help" data-i18n="support">Підтримати</a>
     </nav>
   </div>
 </header>
@@ -183,12 +172,12 @@ footer a{color:#c7d0da;text-decoration:none}
 <div class="hero">
   <div class="bg" role="img" aria-label="Патріарший собор Воскресіння Христового восени"></div>
   <div class="wrap">
-    <div class="kick">Збір на опалення · листопад–грудень 2026</div>
-    <h1>Допоможімо <em>зберегти тепло</em></h1>
-    <p class="sub">Зігріймо наш Собор разом!</p>
+    <div class="kick" data-i18n="kick">Збір на опалення · листопад–грудень 2026</div>
+    <h1 data-i18n="h1">Допоможімо <em>зберегти тепло</em></h1>
+    <p class="sub" data-i18n="sub">Зігріймо наш Собор разом!</p>
     <div class="goal">
-      <div class="sum">330 000 грн</div>
-      <div class="per">потрібно на опалення собору впродовж листопада і грудня</div>
+      <div class="sum" data-i18n="sum">330 000 грн</div>
+      <div class="per" data-i18n="per">потрібно на опалення собору впродовж листопада і грудня</div>
       <div class="prog" id="prog" hidden>
         <div class="track"><div class="fill" id="fill"></div></div>
         <div class="meta"><span id="raised"></span><span id="pct"></span></div>
@@ -196,34 +185,34 @@ footer a{color:#c7d0da;text-decoration:none}
       <div class="per" id="days" style="margin-top:12px"></div>
     </div>
     <div class="ctas">
-      <a class="btn btn-gold" href="#help">Пожертвувати</a>
-      <button class="btn btn-ghost" data-share="native">Поділитися збором</button>
+      <a class="btn btn-gold" href="#help" data-i18n="donate">Пожертвувати</a>
+      <button class="btn btn-ghost" data-share="native" data-i18n="shareBtn">Поділитися збором</button>
     </div>
   </div>
 </div>
 
 <div class="strip">
   <div class="wrap">
-    <div><b>≈ 5 400 грн</b><span>коштує один день тепла в соборі</span></div>
-    <div><b>Щодня</b><span>у соборі лунає молитва за Україну, захисників і мир</span></div>
-    <div><b>UAH · USD · EUR · PayPal</b><span>можна допомогти з будь-якої країни</span></div>
+    <div><b data-i18n="s1b">≈ 5 400 грн</b><span data-i18n="s1">коштує один день тепла в соборі</span></div>
+    <div><b data-i18n="s2b">Щодня</b><span data-i18n="s2">у соборі лунає молитва за Україну, захисників і мир</span></div>
+    <div><b>UAH · USD · EUR · PayPal</b><span data-i18n="s3">можна допомогти з будь-якої країни</span></div>
   </div>
 </div>
 
 <section id="letter">
   <div class="wrap letter">
     <div class="txt">
-      <div class="kick">Звернення</div>
-      <p class="first">Дорогі парафіяни, друзі та добродії Патріаршого собору Воскресіння Христового!</p>
-      <p>Попереду непроста зима. В умовах війни, енергетичної кризи та постійних викликів ми особливо гостро усвідомлюємо, наскільки важливо сьогодні зберегти тепло. Тепло не лише в наших домівках, а й у Божому домі, де щодня лунає молитва за Україну, за наших захисників, за мир і за кожного з нас.</p>
-      <p>Сьогодні звертаємося до вас із проханням допомогти нам забезпечити опалення Патріаршого собору впродовж двох найближчих місяців. <b>На листопад і грудень нам необхідно зібрати 330 000 гривень.</b></p>
-      <p>Це велика сума для нашої парафіяльної спільноти. Але ми віримо, що спільними зусиллями зможемо впоратися і з цим викликом!</p>
-      <p>Ми прагнемо, щоб Патріарший собор і надалі залишався місцем щоденної молитви, духовної підтримки, зустрічей та служіння людям. Щоб навіть у найхолодніші зимові дні кожен, хто переступає його поріг, відчував не лише тепло людських сердець, а й тепло нашого спільного дому.</p>
+      <div class="kick" data-i18n="lk">Звернення</div>
+      <p class="first" data-i18n="l0">Дорогі парафіяни, друзі та добродії Патріаршого собору Воскресіння Христового!</p>
+      <p data-i18n="l1">Попереду непроста зима. В умовах війни, енергетичної кризи та постійних викликів ми особливо гостро усвідомлюємо, наскільки важливо сьогодні зберегти тепло. Тепло не лише в наших домівках, а й у Божому домі, де щодня лунає молитва за Україну, за наших захисників, за мир і за кожного з нас.</p>
+      <p data-i18n="l2">Сьогодні звертаємося до вас із проханням допомогти нам забезпечити опалення Патріаршого собору впродовж двох найближчих місяців. <b>На листопад і грудень нам необхідно зібрати 330 000 гривень.</b></p>
+      <p data-i18n="l3">Це велика сума для нашої парафіяльної спільноти. Але ми віримо, що спільними зусиллями зможемо впоратися і з цим викликом!</p>
+      <p data-i18n="l4">Ми прагнемо, щоб Патріарший собор і надалі залишався місцем щоденної молитви, духовної підтримки, зустрічей та служіння людям. Щоб навіть у найхолодніші зимові дні кожен, хто переступає його поріг, відчував не лише тепло людських сердець, а й тепло нашого спільного дому.</p>
     </div>
     <aside class="quote">
-      <p>«Не існує малої пожертви, коли вона зроблена від щирого серця».</p>
-      <small>Кожна пожертва — 100, 200, 500 чи 1000 гривень — це реальна допомога.</small>
-      <a class="btn btn-gold" style="margin-top:24px;width:100%" href="#help">Перейти до реквізитів</a>
+      <p data-i18n="q">«Не існує малої пожертви, коли вона зроблена від щирого серця».</p>
+      <small data-i18n="qs">Кожна пожертва — 100, 200, 500 чи 1000 гривень — це реальна допомога.</small>
+      <a class="btn btn-gold" style="margin-top:24px;width:100%" href="#help" data-i18n="toDetails">Перейти до реквізитів</a>
     </aside>
   </div>
 </section>
@@ -231,72 +220,67 @@ footer a{color:#c7d0da;text-decoration:none}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-h">
-      <div class="kick">Що означає ваша пожертва</div>
-      <h2>Кожна гривня — це хвилини тепла для всіх, хто приходить до собору</h2>
+      <div class="kick" data-i18n="ak">Що означає ваша пожертва</div>
+      <h2 data-i18n="ah">Кожна гривня — це хвилини тепла для всіх, хто приходить до собору</h2>
     </div>
     <div class="amounts">
-      <div class="amt"><div class="v">100 <small>грн</small></div><div class="t">≈ 27 хвилин тепла</div><p>для всього собору</p></div>
-      <div class="amt"><div class="v">200 <small>грн</small></div><div class="t">≈ 53 хвилини тепла</div><p>майже година Літургії в теплі</p></div>
-      <div class="amt"><div class="v">500 <small>грн</small></div><div class="t">≈ 2 години тепла</div><p>для недільних богослужінь</p></div>
-      <div class="amt"><div class="v">1000 <small>грн</small></div><div class="t">≈ 4,5 години тепла</div><p>для цілого ранку молитви</p></div>
+      <div class="amt"><div class="v">100 <small data-i18n="uah">грн</small></div><div class="t" data-i18n="a1">≈ 27 хвилин тепла</div><p data-i18n="a1p">для всього собору</p></div>
+      <div class="amt"><div class="v">200 <small data-i18n="uah">грн</small></div><div class="t" data-i18n="a2">≈ 53 хвилини тепла</div><p data-i18n="a2p">майже година Літургії в теплі</p></div>
+      <div class="amt"><div class="v">500 <small data-i18n="uah">грн</small></div><div class="t" data-i18n="a3">≈ 2 години тепла</div><p data-i18n="a3p">для недільних богослужінь</p></div>
+      <div class="amt"><div class="v">1000 <small data-i18n="uah">грн</small></div><div class="t" data-i18n="a4">≈ 4,5 години тепла</div><p data-i18n="a4p">для цілого ранку молитви</p></div>
     </div>
-    <p class="note">Орієнтовний розрахунок: 330 000 грн ÷ 61 день ≈ 5 400 грн на добу, або ≈ 225 грн на годину.</p>
+    <p class="note" data-i18n="an">Орієнтовний розрахунок: 330 000 грн ÷ 61 день ≈ 5 400 грн на добу, або ≈ 225 грн на годину.</p>
   </div>
 </section>
 
 <section id="help">
   <div class="wrap">
     <div class="sec-h">
-      <div class="kick">Як можна допомогти</div>
-      <h2>Реквізити для пожертви</h2>
-      <p>Оберіть валюту. Кожне поле можна скопіювати одним натиском.</p>
+      <div class="kick" data-i18n="hk">Як можна допомогти</div>
+      <h2 data-i18n="hh">Реквізити для пожертви</h2>
+      <p data-i18n="hp">Оберіть валюту. Кожне поле можна скопіювати одним натиском.</p>
     </div>
-
     <div class="tabs" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" data-tab="uah">🇺🇦 Гривні (UAH)</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="usd">🇺🇸 Долари (USD)</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="eur">🇪🇺 Євро (EUR)</button>
+      <button class="tab" role="tab" aria-selected="true" data-tab="uah" data-i18n="t1">🇺🇦 Гривні (UAH)</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="usd" data-i18n="t2">🇺🇸 Долари (USD)</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="eur" data-i18n="t3">🇪🇺 Євро (EUR)</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="pp">💙 PayPal</button>
     </div>
-
     <div class="panel on" id="uah" role="tabpanel">
-      <div class="row"><div class="k">Отримувач</div><div class="val">РО РГ УГКЦ ПАТРІАРШОГО СОБОРУ ВОСКРЕСІ</div><button class="copy">Копіювати</button></div>
-      <div class="row"><div class="k">Код ЄДРПОУ</div><div class="val mono">41467776</div><button class="copy">Копіювати</button></div>
+      <div class="row"><div class="k" data-i18n="kRec">Отримувач</div><div class="val">РО РГ УГКЦ ПАТРІАРШОГО СОБОРУ ВОСКРЕСІ</div><button class="copy">Копіювати</button></div>
+      <div class="row"><div class="k" data-i18n="kCode">Код ЄДРПОУ</div><div class="val mono">41467776</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">IBAN</div><div class="val mono">UA203052990000026004046236310</div><button class="copy">Копіювати</button></div>
-      <div class="row"><div class="k">Банк</div><div class="val">АТ КБ «ПРИВАТБАНК»</div><button class="copy">Копіювати</button></div>
-      <div class="row"><div class="k">Призначення платежу</div><div class="val">Добровільна пожертва на опалення Патріаршого собору</div><button class="copy">Копіювати</button></div>
-      <div class="panel-foot"><p>Переказ можна зробити в застосунку будь-якого українського банку.</p><button class="btn btn-gold btn-sm" data-copyall="uah">Скопіювати всі реквізити</button></div>
+      <div class="row"><div class="k" data-i18n="kBank">Банк</div><div class="val">АТ КБ «ПРИВАТБАНК»</div><button class="copy">Копіювати</button></div>
+      <div class="row"><div class="k" data-i18n="kPurp">Призначення платежу</div><div class="val">Добровільна пожертва на опалення Патріаршого собору</div><button class="copy">Копіювати</button></div>
+      <div class="panel-foot"><p data-i18n="uahNote">Переказ можна зробити в застосунку будь-якого українського банку.</p><button class="btn btn-gold btn-sm" data-copyall="uah" data-i18n="copyAll">Скопіювати всі реквізити</button></div>
     </div>
-
     <div class="panel" id="usd" role="tabpanel">
       <div class="row"><div class="k">Beneficiary</div><div class="val">RO RH UHKTS PATRIARSHOHO SOBORU VOSKRE</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">Tax number</div><div class="val mono">41467776</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">IBAN</div><div class="val mono">UA183253650000000260000009051</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">Beneficiary's bank</div><div class="val">JSC KREDOBANK, Lviv, Ukraine</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">SWIFT</div><div class="val mono">WUCBUA2X</div><button class="copy">Копіювати</button></div>
-      <div class="inter"><b>Банки-посередники (Intermediary Banks) — один із наведених:</b>
+      <div class="inter"><b data-i18n="inter">Банки-посередники (Intermediary Banks) — один із наведених:</b>
         <ul><li>BANK OF NEW YORK MELLON, New York, USA — SWIFT <code>IRVTUS3N</code></li>
         <li>RAIFFEISEN BANK INTERNATIONAL AG, Vienna, Austria — SWIFT <code>RZBAATWW</code></li></ul></div>
-      <div class="panel-foot"><p>Призначення: Donation for heating of the Patriarchal Cathedral.</p><button class="btn btn-gold btn-sm" data-copyall="usd">Copy all details</button></div>
+      <div class="panel-foot"><p data-i18n="purpEn">Призначення: Donation for heating of the Patriarchal Cathedral.</p><button class="btn btn-gold btn-sm" data-copyall="usd" data-i18n="copyAll">Скопіювати всі реквізити</button></div>
     </div>
-
     <div class="panel" id="eur" role="tabpanel">
       <div class="row"><div class="k">Beneficiary</div><div class="val">RO RH UHKTS PATRIARSHOHO SOBORU VOSKRE</div><button class="copy">Копіювати</button></div>
-      <div class="row"><div class="k">ЄДРПОУ / Tax number</div><div class="val mono">41467776</div><button class="copy">Копіювати</button></div>
+      <div class="row"><div class="k">Tax number</div><div class="val mono">41467776</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">IBAN</div><div class="val mono">UA473253650000000260010010878</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">Beneficiary's bank</div><div class="val">JSC KREDOBANK, Lviv, Ukraine</div><button class="copy">Копіювати</button></div>
       <div class="row"><div class="k">SWIFT</div><div class="val mono">WUCBUA2X</div><button class="copy">Копіювати</button></div>
-      <div class="inter"><b>Банки-посередники (Intermediary Banks) — один із наведених:</b>
+      <div class="inter"><b data-i18n="inter">Банки-посередники (Intermediary Banks) — один із наведених:</b>
         <ul><li>KBC BANK NV, Brussels, Belgium — SWIFT <code>KREDBEBB</code></li>
         <li>COMMERZBANK AG, Frankfurt, Germany — SWIFT <code>COBADEFF</code></li>
         <li>UNICREDIT S.P.A., Milano, Italy — SWIFT <code>UNCRITMM</code></li>
         <li>RAIFFEISEN BANK INTERNATIONAL AG, Vienna, Austria — SWIFT <code>RZBAATWW</code></li></ul></div>
-      <div class="panel-foot"><p>Призначення: Donation for heating of the Patriarchal Cathedral.</p><button class="btn btn-gold btn-sm" data-copyall="eur">Copy all details</button></div>
+      <div class="panel-foot"><p data-i18n="purpEn">Призначення: Donation for heating of the Patriarchal Cathedral.</p><button class="btn btn-gold btn-sm" data-copyall="eur" data-i18n="copyAll">Скопіювати всі реквізити</button></div>
     </div>
-
     <div class="panel" id="pp" role="tabpanel">
       <div class="row"><div class="k">PayPal</div><div class="val mono">anbodnaruk</div><button class="copy">Копіювати</button></div>
-      <div class="panel-foot"><p>Зручно для друзів і добродіїв з-за кордону: США, Канада, Європа.</p></div>
+      <div class="panel-foot"><p data-i18n="ppNote">Зручно для друзів і добродіїв з-за кордону: США, Канада, Європа.</p></div>
     </div>
   </div>
 </section>
@@ -306,12 +290,12 @@ footer a{color:#c7d0da;text-decoration:none}
     <div class="far">
       <div class="img" role="img" aria-label="Патріарший собор на заході сонця"></div>
       <div class="c">
-        <div class="kick">Для тих, хто далеко</div>
-        <h2>Серцем — з нами, де б ви не були</h2>
-        <p>Особливо звертаємося до тих, хто не має можливості часто приходити до Патріаршого собору на Божественну Літургію, але серцем залишається з нами.</p>
-        <p>До тих, хто живе далеко від Києва, перебуває за кордоном, молиться разом із нами на відстані та вважає Патріарший собор своїм духовним домом. Сьогодні ви також можете стати частиною цієї доброї справи.</p>
+        <div class="kick" data-i18n="fk">Для тих, хто далеко</div>
+        <h2 data-i18n="fh">Серцем — з нами, де б ви не були</h2>
+        <p data-i18n="f1">Особливо звертаємося до тих, хто не має можливості часто приходити до Патріаршого собору на Божественну Літургію, але серцем залишається з нами.</p>
+        <p data-i18n="f2">До тих, хто живе далеко від Києва, перебуває за кордоном, молиться разом із нами на відстані та вважає Патріарший собор своїм духовним домом. Сьогодні ви також можете стати частиною цієї доброї справи.</p>
         <div class="flags"><span>USD · SWIFT</span><span>EUR · SWIFT</span><span>PayPal</span></div>
-        <a class="btn btn-gold" style="margin-top:26px" href="#help" data-goto="usd">Реквізити для закордону</a>
+        <a class="btn btn-gold" style="margin-top:26px" href="#help" data-goto="usd" data-i18n="fb">Реквізити для закордону</a>
       </div>
     </div>
   </div>
@@ -319,102 +303,191 @@ footer a{color:#c7d0da;text-decoration:none}
 
 <section style="padding-top:0">
   <div class="share">
-    <div class="kick">Не можете допомогти фінансово?</div>
-    <h2>Поширте цей збір</h2>
-    <p>Можливо, саме завдяки вам наше прохання побачать люди, які зможуть нас підтримати.</p>
+    <div class="kick" data-i18n="shk">Не можете допомогти фінансово?</div>
+    <h2 data-i18n="shh">Поширте цей збір</h2>
+    <p data-i18n="shp">Можливо, саме завдяки вам наше прохання побачать люди, які зможуть нас підтримати.</p>
     <div class="sbtns">
       <a class="sbtn" data-share="tg" href="#">Telegram</a>
       <a class="sbtn" data-share="fb" href="#">Facebook</a>
       <a class="sbtn" data-share="wa" href="#">WhatsApp</a>
       <a class="sbtn" data-share="viber" href="#">Viber</a>
-      <button class="sbtn" data-share="copy">Копіювати посилання</button>
+      <button class="sbtn" data-share="copy" data-i18n="copyLink">Копіювати посилання</button>
     </div>
   </div>
 </section>
 
 <div class="final">
   <div class="wrap">
-    <h2>Зігріймо наш Собор спільними зусиллями!</h2>
-    <p>Щиро дякуємо кожному, хто молиться разом із нами та допомагає Патріаршому собору залишатися місцем живої віри, надії та любові. Нехай Господь благословить кожного з вас і ваші родини!</p>
-    <a class="btn btn-gold" href="#help">Підтримати собор</a>
+    <h2 data-i18n="finh">Зігріймо наш Собор спільними зусиллями!</h2>
+    <p data-i18n="finp">Щиро дякуємо кожному, хто молиться разом із нами та допомагає Патріаршому собору залишатися місцем живої віри, надії та любові. Нехай Господь благословить кожного з вас і ваші родини!</p>
+    <a class="btn btn-gold" href="#help" data-i18n="finb">Підтримати собор</a>
   </div>
 </div>
 
 <footer>
   <div class="wrap">
-    <div>Патріарший собор Воскресіння Христового УГКЦ<br>вул. Микільсько-Слобідська, 5, Київ 02002</div>
+    <div data-i18n="addr">Патріарший собор Воскресіння Христового УГКЦ<br>вул. Микільсько-Слобідська, 5, Київ 02002</div>
     <div><a href="tel:+380677779730">+380 (67) 777-97-30</a><br><a href="mailto:cathedral.ugcc@gmail.com">cathedral.ugcc@gmail.com</a></div>
-    <div>© 2022–2026 Київська архиєпархія УГКЦ</div>
+    <div data-i18n="copy">© 2022–2026 Київська архиєпархія УГКЦ</div>
   </div>
 </footer>
 
-<div class="mbar"><a class="btn btn-gold" href="#help">Пожертвувати</a><button class="btn btn-ghost" data-share="native">Поділитися</button></div>
-<div class="toast" id="toast">Скопійовано</div>
+<div class="mbar"><a class="btn btn-gold" href="#help" data-i18n="donate">Пожертвувати</a><button class="btn btn-ghost" data-share="native" data-i18n="share">Поділитися</button></div>
+<div class="toast" id="toast"></div>
 
 <script>
-/* ===== НАЛАШТУВАННЯ ЗБОРУ =====
-   RAISED — скільки вже зібрано (грн). Поки null — смуга прогресу прихована.
-   Оновлюйте це число, щоб показати прогрес, напр.: const RAISED = 128500; */
-const GOAL = 330000;
-const RAISED = null;
-const END = new Date('2026-12-31T23:59:59+02:00');
+/* НАЛАШТУВАННЯ ЗБОРУ: RAISED — скільки вже зібрано (грн). Поки null — смуга прогресу прихована. */
+var GOAL = 330000;
+var RAISED = null;
+var END = new Date('2026-12-31T23:59:59+02:00');
 
-const fmt = n => n.toLocaleString('uk-UA').replace(/,/g,' ');
-if (RAISED !== null) {
-  const p = Math.min(100, Math.round(RAISED / GOAL * 100));
-  document.getElementById('prog').hidden = false;
-  document.getElementById('raised').textContent = 'Зібрано ' + fmt(RAISED) + ' грн';
-  document.getElementById('pct').textContent = p + '%';
-  requestAnimationFrame(() => setTimeout(() => document.getElementById('fill').style.width = p + '%', 150));
-}
-const d = Math.ceil((END - new Date()) / 864e5);
-document.getElementById('days').textContent = d > 0 ? 'До кінця збору: ' + d + ' ' + (d%10==1&&d%100!=11?'день':(d%10>=2&&d%10<=4&&(d%100<10||d%100>=20)?'дні':'днів')) : 'Збір завершено. Дякуємо!';
-
-/* tabs */
-const tabs = document.querySelectorAll('.tab');
-function openTab(id){
-  tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab === id));
-  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === id));
-}
-tabs.forEach(t => t.addEventListener('click', () => openTab(t.dataset.tab)));
-document.querySelectorAll('[data-goto]').forEach(a => a.addEventListener('click', () => openTab(a.dataset.goto)));
-
-/* copy */
-const toast = document.getElementById('toast');
-function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(say.t); say.t = setTimeout(() => toast.classList.remove('show'), 1800); }
-async function copy(text){
-  try { await navigator.clipboard.writeText(text); }
-  catch(e){ const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy')}catch(_){} ta.remove(); }
-}
-document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
-  await copy(b.parentElement.querySelector('.val').textContent.trim());
-  b.textContent = '✓ Скопійовано'; b.classList.add('ok');
-  setTimeout(() => { b.textContent = 'Копіювати'; b.classList.remove('ok'); }, 1600);
-  say('Скопійовано');
-}));
-document.querySelectorAll('[data-copyall]').forEach(b => b.addEventListener('click', async () => {
-  const p = document.getElementById(b.dataset.copyall);
-  let t = [...p.querySelectorAll('.row')].map(r => r.querySelector('.k').textContent + ': ' + r.querySelector('.val').textContent.trim()).join('\n');
-  const inter = p.querySelector('.inter'); if (inter) t += '\n\n' + inter.innerText.trim();
-  await copy(t); say('Усі реквізити скопійовано');
-}));
-
-/* share */
-const url = location.href.split('#')[0];
-const msg = 'Допоможімо зберегти тепло в Патріаршому соборі! Збір 330 000 грн на опалення на листопад і грудень.';
-const links = {
-  tg: 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(msg),
-  fb: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
-  wa: 'https://wa.me/?text=' + encodeURIComponent(msg + ' ' + url),
-  viber: 'viber://forward?text=' + encodeURIComponent(msg + ' ' + url)
+var EN = {
+  nav1:'Appeal', nav2:'Bank details', nav3:'From abroad', support:'Support',
+  kick:'Heating fundraiser · November–December 2026',
+  h1:'Help us <em>keep the Cathedral warm</em>',
+  sub:'Let’s warm our Cathedral together!',
+  sum:'UAH 330,000',
+  per:'needed to heat the Cathedral through November and December',
+  donate:'Donate', shareBtn:'Share the appeal', share:'Share',
+  s1b:'≈ UAH 5,400', s1:'covers one day of heating in the Cathedral',
+  s2b:'Every day', s2:'prayers rise here for Ukraine, its defenders and for peace',
+  s3:'you can help from any country',
+  lk:'Our appeal',
+  l0:'Dear parishioners, friends and benefactors of the Patriarchal Cathedral of the Resurrection of Christ!',
+  l1:'A difficult winter lies ahead. Amid war, an energy crisis and constant challenges, we feel especially keenly how important it is to keep the warmth today. Warmth not only in our homes, but also in the House of God, where every day prayers are offered for Ukraine, for our defenders, for peace and for each of us.',
+  l2:'Today we turn to you with a request to help us heat the Patriarchal Cathedral over the next two months. <b>For November and December we need to raise UAH 330,000.</b>',
+  l3:'This is a large sum for our parish community. But we believe that together we can meet this challenge!',
+  l4:'We want the Patriarchal Cathedral to remain a place of daily prayer, spiritual support, fellowship and service to people. So that even on the coldest winter days, everyone who crosses its threshold feels not only the warmth of human hearts, but also the warmth of our common home.',
+  q:'“No gift is small when it is given from a sincere heart.”',
+  qs:'Every donation — 100, 200, 500 or 1,000 hryvnias — is real help.',
+  toDetails:'Go to bank details',
+  ak:'What your donation means',
+  ah:'Every hryvnia means minutes of warmth for everyone who comes to the Cathedral',
+  uah:'UAH',
+  a1:'≈ 27 minutes of warmth', a1p:'for the whole Cathedral',
+  a2:'≈ 53 minutes of warmth', a2p:'almost an hour of the Liturgy in warmth',
+  a3:'≈ 2 hours of warmth', a3p:'for Sunday services',
+  a4:'≈ 4.5 hours of warmth', a4p:'for a whole morning of prayer',
+  an:'Estimate: UAH 330,000 ÷ 61 days ≈ UAH 5,400 per day, or ≈ UAH 225 per hour.',
+  hk:'How you can help', hh:'Bank details for donations',
+  hp:'Choose a currency. Each field can be copied with one tap.',
+  t1:'🇺🇦 Hryvnia (UAH)', t2:'🇺🇸 US dollars (USD)', t3:'🇪🇺 Euro (EUR)',
+  kRec:'Recipient', kCode:'EDRPOU (tax) code', kBank:'Bank', kPurp:'Payment purpose',
+  uahNote:'Transfers in hryvnia can be made from any Ukrainian banking app. Keep the payment purpose in Ukrainian as shown.',
+  copyAll:'Copy all details',
+  inter:'Intermediary banks — use any one of the following:',
+  purpEn:'Payment reference: Donation for heating of the Patriarchal Cathedral.',
+  ppNote:'Convenient for friends and benefactors abroad: USA, Canada, Europe.',
+  fk:'For those far away', fh:'With us in heart, wherever you are',
+  f1:'We especially turn to those who cannot often come to the Divine Liturgy at the Patriarchal Cathedral, but remain with us in their hearts.',
+  f2:'To those who live far from Kyiv or abroad, who pray with us from a distance and consider the Patriarchal Cathedral their spiritual home. Today you too can become part of this good work.',
+  fb:'Details for international transfers',
+  shk:'Can’t help financially?', shh:'Share this appeal',
+  shp:'Perhaps thanks to you, our request will reach people who are able to support us.',
+  copyLink:'Copy link',
+  finh:'Let’s warm our Cathedral together!',
+  finp:'We sincerely thank everyone who prays with us and helps the Patriarchal Cathedral remain a place of living faith, hope and love. May the Lord bless each of you and your families!',
+  finb:'Support the Cathedral',
+  addr:'Patriarchal Cathedral of the Resurrection of Christ, UGCC<br>5 Mykilsko-Slobidska St., Kyiv 02002, Ukraine',
+  copy:'© 2022–2026 Kyiv Archeparchy of the UGCC'
 };
-document.querySelectorAll('[data-share]').forEach(el => el.addEventListener('click', async e => {
-  const k = el.dataset.share;
-  if (links[k]) { e.preventDefault(); window.open(links[k], '_blank', 'noopener'); return; }
+var UI = {
+  uk:{copy:'Копіювати', copied:'✓ Скопійовано', toast:'Скопійовано', all:'Усі реквізити скопійовано', link:'Посилання скопійовано',
+      daysLeft:function(n){ var a=n%10,b=n%100; var w=(a==1&&b!=11)?'день':((a>=2&&a<=4&&(b<10||b>=20))?'дні':'днів'); return 'До кінця збору: '+n+' '+w; },
+      done:'Збір завершено. Дякуємо!', raised:function(x){ return 'Зібрано '+x.toLocaleString('uk-UA')+' грн'; },
+      msg:'Допоможімо зберегти тепло в Патріаршому соборі! Збір 330 000 грн на опалення на листопад і грудень.',
+      title:'Допоможімо зберегти тепло — збір на опалення Патріаршого собору'},
+  en:{copy:'Copy', copied:'✓ Copied', toast:'Copied', all:'All details copied', link:'Link copied',
+      daysLeft:function(n){ return n+(n==1?' day':' days')+' left in the fundraiser'; },
+      done:'The fundraiser has ended. Thank you!', raised:function(x){ return 'Raised UAH '+x.toLocaleString('en-US'); },
+      msg:'Help keep the Patriarchal Cathedral in Kyiv warm this winter! We are raising UAH 330,000 for heating in November and December.',
+      title:'Help keep the Cathedral warm — heating fundraiser for the Patriarchal Cathedral in Kyiv'}
+};
+
+var UK = {};
+document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.getAttribute('data-i18n'); if(!(k in UK)) UK[k]=el.innerHTML; });
+
+var lang = 'uk';
+function setLang(l, save){
+  lang = (l === 'en') ? 'en' : 'uk';
+  var dict = lang === 'en' ? EN : UK;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.getAttribute('data-i18n'); if(dict[k]!=null) el.innerHTML = dict[k]; });
+  document.querySelectorAll('.copy').forEach(function(b){ b.textContent = UI[lang].copy; });
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang); });
+  document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
+  document.title = UI[lang].title;
+  renderStats();
+  if (save) {
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+    try { var u = new URL(location.href); if (lang === 'en') u.searchParams.set('lang','en'); else u.searchParams.delete('lang'); history.replaceState(null,'',u.toString()); } catch(e) {}
+  }
+}
+function renderStats(){
+  if (RAISED !== null) {
+    var p = Math.min(100, Math.round(RAISED / GOAL * 100));
+    document.getElementById('prog').hidden = false;
+    document.getElementById('raised').textContent = UI[lang].raised(RAISED);
+    document.getElementById('pct').textContent = p + '%';
+    setTimeout(function(){ document.getElementById('fill').style.width = p + '%'; }, 200);
+  }
+  var d = Math.ceil((END - new Date()) / 864e5);
+  document.getElementById('days').textContent = d > 0 ? UI[lang].daysLeft(d) : UI[lang].done;
+}
+document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); if (typeof openTab === 'function') openTab(lang === 'en' ? 'usd' : 'uah'); }); });
+
+(function initLang(){
+  var l = null;
+  try { l = new URL(location.href).searchParams.get('lang'); } catch(e) {}
+  if (!l) { try { l = localStorage.getItem('lang'); } catch(e) {} }
+  if (!l) { var nl = (navigator.language || 'uk').toLowerCase(); l = (nl.indexOf('uk') === 0 || nl.indexOf('ru') === 0) ? 'uk' : 'en'; }
+  setLang(l, false);
+})();
+
+var tabs = document.querySelectorAll('.tab');
+function openTab(id){
+  tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.tab === id); });
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('on', p.id === id); });
+}
+tabs.forEach(function(t){ t.addEventListener('click', function(){ openTab(t.dataset.tab); }); });
+if (lang === 'en') openTab('usd');
+document.querySelectorAll('[data-goto]').forEach(function(a){ a.addEventListener('click', function(){ openTab(a.dataset.goto); }); });
+
+var toast = document.getElementById('toast'), tt;
+function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1800); }
+function fallback(text){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); }
+function copy(text){
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).catch(function(){ fallback(text); });
+  fallback(text); return Promise.resolve();
+}
+document.querySelectorAll('.copy').forEach(function(b){ b.addEventListener('click', function(){
+  copy(b.parentElement.querySelector('.val').textContent.trim()).then(function(){
+    b.textContent = UI[lang].copied; b.classList.add('ok');
+    setTimeout(function(){ b.textContent = UI[lang].copy; b.classList.remove('ok'); }, 1600);
+    say(UI[lang].toast);
+  });
+}); });
+document.querySelectorAll('[data-copyall]').forEach(function(b){ b.addEventListener('click', function(){
+  var p = document.getElementById(b.dataset.copyall);
+  var lines = [];
+  p.querySelectorAll('.row').forEach(function(r){ lines.push(r.querySelector('.k').textContent + ': ' + r.querySelector('.val').textContent.trim()); });
+  var inter = p.querySelector('.inter'); if (inter) { lines.push(''); lines.push(inter.innerText.trim()); }
+  copy(lines.join(String.fromCharCode(10))).then(function(){ say(UI[lang].all); });
+}); });
+
+function shareUrl(){ var u = location.href.split('#')[0]; return u; }
+document.querySelectorAll('[data-share]').forEach(function(el){ el.addEventListener('click', function(e){
   e.preventDefault();
-  if (k === 'native' && navigator.share) { try { await navigator.share({title: document.title, text: msg, url}); return; } catch(_){ return; } }
-  await copy(url); say('Посилання скопійовано');
-}));
+  var k = el.dataset.share, url = shareUrl(), msg = UI[lang].msg;
+  var links = {
+    tg: 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(msg),
+    fb: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+    wa: 'https://wa.me/?text=' + encodeURIComponent(msg + ' ' + url),
+    viber: 'viber://forward?text=' + encodeURIComponent(msg + ' ' + url)
+  };
+  if (links[k]) { window.open(links[k], '_blank', 'noopener'); return; }
+  if (k === 'native' && navigator.share) { navigator.share({title: document.title, text: msg, url: url}).catch(function(){}); return; }
+  copy(url).then(function(){ say(UI[lang].link); });
+}); });
 </script>
 </body>
 </html>
