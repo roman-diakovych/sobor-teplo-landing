@@ -88,6 +88,17 @@ section{padding:88px 0}
 .amt .t{margin-top:6px;color:var(--gold);font-weight:600;font-size:15px}
 .amt p{font-size:14px;color:var(--mute);margin-top:4px}
 .note{font-size:13px;color:var(--mute);margin-top:16px}
+.life{background:var(--navy);color:#fff}
+.life .sec-h h2{color:#fff}
+.life .sec-h p{color:#a9b6c4}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px}
+.gal figure{position:relative;margin:0;border-radius:12px;overflow:hidden;background:#1e2f42}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;font-size:14px;font-weight:500;color:#fff;background:linear-gradient(180deg,rgba(15,25,35,0),rgba(15,25,35,.85))}
+.gal .a{grid-column:span 2;grid-row:span 2}
+.gal .b{grid-column:span 2}
+.gal .e,.gal .f{grid-column:span 2}
 #help{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .tab{padding:11px 20px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font:600 15px Inter,sans-serif;color:var(--navy);cursor:pointer}
@@ -135,6 +146,9 @@ footer a{color:#c7d0da;text-decoration:none}
   .letter,.far{grid-template-columns:1fr}
   .quote{position:static;order:-1;max-width:520px}
   .amounts{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .gal .a{grid-column:span 2;grid-row:span 2}
+  .gal .b,.gal .e,.gal .f{grid-column:span 2}
   .far .img{min-height:300px}
   .far .c{padding:36px 26px}
   .hnav a.l{display:none}
@@ -233,7 +247,26 @@ footer a{color:#c7d0da;text-decoration:none}
   </div>
 </section>
 
-<section style="padding-top:0">
+
+<section class="life" id="life">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="kick" data-i18n="gk">Життя собору</div>
+      <h2 data-i18n="gh">Тепло, яке ви зберігаєте, — це люди, які тут моляться</h2>
+      <p data-i18n="gp">Тут громада збирається на Божественну Літургію, молиться за Україну і приступає до Святих Таїнств. Ваша пожертва дає їм змогу робити це в теплі.</p>
+    </div>
+    <div class="gal">
+      <figure class="a"><img src="img/g-pray.webp" alt="" loading="lazy"><figcaption data-i18n="g1">Молитва в соборі</figcaption></figure>
+      <figure class="b"><img src="img/g-community.webp" alt="" loading="lazy"><figcaption data-i18n="g2">Громада на Літургії</figcaption></figure>
+      <figure class="c"><img src="img/g-communion.webp" alt="" loading="lazy"><figcaption data-i18n="g3">Святе Причастя</figcaption></figure>
+      <figure class="d"><img src="img/g-icon.webp" alt="" loading="lazy"><figcaption data-i18n="g4">Ікона Воскресіння Христового</figcaption></figure>
+      <figure class="e"><img src="img/g-seated.webp" alt="" loading="lazy"><figcaption data-i18n="g5">Парафіяни собору</figcaption></figure>
+      <figure class="f"><img src="img/g-autumn.webp" alt="" loading="lazy"><figcaption data-i18n="g6">Патріарший собор восени</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="sec-h">
       <div class="kick" data-i18n="ak">Що означає ваша пожертва</div>
@@ -379,6 +412,10 @@ var EN = {
   q:'“No gift is small when it is given from a sincere heart.”',
   qs:'Every donation — 100, 200, 500 or 1,000 hryvnias — is real help.',
   toDetails:'Go to bank details',
+  gk:'Life of the Cathedral',
+  gh:'The warmth you keep is for the people who pray here',
+  gp:'Here the community gathers for the Divine Liturgy, prays for Ukraine and receives the Holy Mysteries. Your donation lets them do so in warmth.',
+  g1:'Prayer in the Cathedral', g2:'The community at the Liturgy', g3:'Holy Communion', g4:'Icon of the Resurrection of Christ', g5:'Parishioners of the Cathedral', g6:'The Patriarchal Cathedral in autumn',
   ak:'What your donation means',
   ah:'Every hryvnia means minutes of warmth for everyone who comes to the Cathedral',
   uah:'UAH',
